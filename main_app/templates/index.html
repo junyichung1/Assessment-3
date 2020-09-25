@@ -16,7 +16,7 @@
     <hr>
 
 {% else %}
-    <table>
+    <table class="pure-table pure-table-striped">
         <div>
 
             <tr>
@@ -28,14 +28,14 @@
             <tr>
                 <td>{{widget.description}}</td>
                 <td>{{widget.quantity}}</td>
-                <td><a href="{% url 'delete_widget' widget.id %}"><input type="submit" value="X"></a></td>
+                <td><a href="{% url 'delete_widget' widget.id %}">X</a></td>
             </tr>
             {% endfor %}
         </div>
     </table>
-        
+        <hr>
         {% endif %}
-        <a href="{% url 'add_widget' %}"><input type="submit" class="btn" value="Add Widget"></a>
+        <a href="{% url 'add_widget' %}"><input type="submit" class="pure-button" value="Add Widget"></a>
         
         
     </body>

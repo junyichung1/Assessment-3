@@ -7,6 +7,7 @@ label {
     width: 100px;
     text-align: right;
 }
-table {
-    text-align: center;
+table a {
+    color: red;
+    text-decoration: none;
 }
