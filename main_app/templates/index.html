@@ -11,12 +11,32 @@
 <body>
     <h1>Wacky Widgets</h1>
 
-    {% if widget_list|length == 0 %}
+    {% if widgets|length == 0 %}
     <h3>No Widgets Exist</h3>
     <hr>
 
 {% else %}
+    <table>
+        <div>
 
-{% endif %}
-</body>
-</html>
+            <tr>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Delete</th>
+            </tr>
+            {% for widget in widgets %}
+            <tr>
+                <td>{{widget.description}}</td>
+                <td>{{widget.quantity}}</td>
+                <td><a href="{% url 'delete_widget' widget.id %}"><input type="submit" value="X"></a></td>
+            </tr>
+            {% endfor %}
+        </div>
+    </table>
+        
+        {% endif %}
+        <a href="{% url 'add_widget' %}"><input type="submit" class="btn" value="Add Widget"></a>
+        
+        
+    </body>
+    </html>
